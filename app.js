@@ -10,14 +10,15 @@ const viewsRouter = require("./routes/views");
 // middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({ extended: false })); 
-app.use(expressLayouts);
+app.use(express.urlencoded({ extended: true })); 
+
 
 
 //view engine
 app.set('view engine', 'ejs');
-app.set('layout', 'layout');
 app.set("views" ,(path.join(__dirname, 'views')));
+app.use(expressLayouts);
+app.set('layout', 'layout');
 
 //routes
 app.use('/', viewsRouter);
