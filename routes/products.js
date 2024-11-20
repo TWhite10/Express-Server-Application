@@ -3,7 +3,7 @@ const router = express.Router();
 
 
 const products = [];
-let nextProductId = products.length ? products[products.length - 1].id + 1 : 1;
+let nextProductId = 1;
 
 // function for errors 
 const error = (status, message) => {
