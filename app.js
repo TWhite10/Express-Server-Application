@@ -9,18 +9,15 @@ const viewsRouter = require("./routes/views");
 
 // middleware
 app.use(express.json());
-
-// route testing
-app.use("/products", productsRouter);
-
-
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: false })); 
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressLayouts);
 
+
+//view engine
 app.set('view engine', 'ejs');
 app.set('layout', 'layout');
+app.set("views" ,(path.join(__dirname, 'views')));
 
 //routes
 app.use('/', viewsRouter);

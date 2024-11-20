@@ -20,7 +20,8 @@ router.get('/products', (req, res) => {
 //new product 
 router.get('/products/new', (req, res) => {
     res.render('products/new', {
-        pageTitle: 'Add New Product'
+        pageTitle: 'Add New Product',
+        formData:{}
     });
 });
 //create new product
