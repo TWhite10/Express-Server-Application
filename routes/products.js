@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const products = require("../data/products")
 
-
-const products = [];
-let nextProductId = 1;
+// const products = [];
+// let nextProductId = 1;
 
 // function for errors 
 const error = (status, message) => {

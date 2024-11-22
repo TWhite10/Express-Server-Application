@@ -10,3 +10,38 @@ body {
     padding: 20px;
     background: linear-gradient(#8cb9e9, #91cce5);
 }
+.card{
+    width: auto;
+}
+div.card{
+    margin-top: 20px;
+    margin-bottom: 20px; 
+} */
+div.card-body{
+    width:auto;
+}
+.newProductForm{
+    width: 500px;
+    margin: 0 auto ;
+}
+
+.newProduct{
+    display: grid;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.card-title{
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+}
+.price{
+    color: #28a745;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.description{
+    color: #666;
+    margin-bottom: 15px;
+}

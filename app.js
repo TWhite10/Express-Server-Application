@@ -22,7 +22,7 @@ app.set('layout', 'layout');
 
 //routes
 app.use('/', viewsRouter);
-app.use('/api/products', productsRouter);
+app.use('/data/products', productsRouter);
 
 // error handling middleware
 app.use((err, req, res, next) => {

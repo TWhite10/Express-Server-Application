@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-
 const products = require('../data/products');
+
 //main page
 router.get('/', (req, res) => {
     res.render('index', {
