@@ -46,7 +46,40 @@ router.post('/products', (req, res) => {
     
     res.redirect('/products');
 });
+//edit product
+router.get('/products/:id/edit', (req, res) => {
+    const product = products.find(p => p.id == req.params.id);
+    if (!product){
+        res.redirect("/products")
+    }
+    res.render('products/edit', {
+        pageTitle: 'Edit Products',
+        product: product,
+        formData: product
+    }); 
+})
+//post new product
+router.post('/products/:id', (req, res) => {
+    const { name, price, description } = req.body;
+    if (!name || !price) {
+        return res.render('products/new', {
+            pageTitle: 'Edit Product',
+            error: 'Name and price are required',
+            formData: req.body
+        });
 
+    }
+    const product = products.find((p,i)=>{
+        if(p.id ==req.params.id){
+            products[i]={
+                ...p,
+                name,
+                price: parseFloat(price),
+                description: description || ''
 
+            };return true
+        }
+    }); res.redirect('/products');
+});
 
 module.exports = router;
